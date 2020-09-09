@@ -1,2 +1,2 @@
 # enchtablethemod
-Enchant Table the mod
+Enchant Table the mod (also golf sucks)
