@@ -1,0 +1,3 @@
+displayName = Ench Table: the mod
+author = the entirety of emnch table
+version = 0.1
