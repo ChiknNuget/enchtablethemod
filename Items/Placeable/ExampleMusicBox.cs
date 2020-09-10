@@ -1,6 +1,6 @@
 using Terraria.ModLoader;
 
-namespace ExampleMod.Items.Placeable
+namespace enchtablethemod.Items.Placeable
 {
 	public class ExampleMusicBox : ModItem
 	{
@@ -19,7 +19,7 @@ namespace ExampleMod.Items.Placeable
 			item.width = 24;
 			item.height = 24;
 			item.rare = 4;
-			item.value = 100000;
+			item.value = 69420;
 			item.accessory = true;
 		}
 	}
