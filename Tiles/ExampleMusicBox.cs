@@ -4,7 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace ExampleMod.Tiles
+namespace enchtablethemod.Tiles
 {
 	internal class ExampleMusicBox : ModTile
 	{
@@ -31,6 +31,10 @@ namespace ExampleMod.Tiles
 			player.noThrow = 2;
 			player.showItemIcon = true;
 			player.showItemIcon2 = mod.ItemType("ExampleMusicBox");
-		}
-	}
+public override void Load()
+{
+    if (!Main.dedServ) // do not run this code on the server
+    {
+        AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/DoTheMario"), ItemType("ExampleMusicBox"), TileType("ExampleMusicBox"));
+    }
 }
