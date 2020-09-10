@@ -19,7 +19,7 @@ namespace enchtablethemod.Items.Placeable
 			item.width = 24;
 			item.height = 24;
 			item.rare = 4;
-			item.value = 69420;
+			item.value = 100000;
 			item.accessory = true;
 		}
 	}
