@@ -173,10 +173,10 @@ namespace enchtablethemod.NPCs.Bosses
 
         private void despawnTest(NPC npc) // semi-stolen but kind of changed
         {
-            if (Main.player[npc.target].dead == true || Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 1500)
+            if (Main.player[npc.target].dead == true || Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 3500)
             {
                 npc.TargetClosest(true);
-                if (Main.player[npc.target].dead == true || Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 1500)
+                if (Main.player[npc.target].dead == true || Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 3500)
                 {
                     if (despawn == 0) despawn++;
                 }
