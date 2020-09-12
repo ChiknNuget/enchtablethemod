@@ -15,9 +15,9 @@ namespace enchtablethemod.NPCs.Bosses
     {
         public override void SetDefaults()
         {
-            npc.CloneDefaults(NPCID.ShadowFlameApparition);
-			npc.damage = 10;
-            aiType = NPCID.ShadowFlameApparition;
+            	npc.CloneDefaults(NPCID.ShadowFlameApparition);
+		npc.damage = 10;
+            	aiType = NPCID.ShadowFlameApparition;
         }
 
         public override void AI()
