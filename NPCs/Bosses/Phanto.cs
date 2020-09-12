@@ -17,6 +17,7 @@ namespace enchtablethemod.NPCs.Bosses
         {
             	npc.CloneDefaults(NPCID.ShadowFlameApparition);
 		npc.damage = 10;
+		npc.lifeMax = 50;
             	aiType = NPCID.ShadowFlameApparition;
         }
 
