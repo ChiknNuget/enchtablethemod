@@ -43,7 +43,7 @@ namespace enchtablethemod.NPCs.Bosses
             npc.npcSlots = 5;
 
             npc.lifeMax = 1500;
-            npc.damage = 15;
+            npc.damage = 20;
             npc.defense = 7;
             npc.knockBackResist = 0f;
 
@@ -61,7 +61,7 @@ namespace enchtablethemod.NPCs.Bosses
 
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
-            npc.lifeMax = (int)(2000 + (500 * numPlayers));
+            npc.lifeMax = (2000 + (500 * numPlayers));
             npc.damage = (int)(npc.damage * 1.3f);
         }
 
@@ -86,13 +86,10 @@ namespace enchtablethemod.NPCs.Bosses
                     break;
                 case 1:
                     minionCrap();
-                    if(timer > 149)
-                    {
-                        NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<Phanto>(), npc.whoAmI);
-                    }
                     break;
                 case 2:
                     PhaseVar = 0;
+                    npc.position.X -= 1000;
                     break;
             }
             npc.netUpdate = true;

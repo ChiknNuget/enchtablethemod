@@ -13,16 +13,44 @@ namespace enchtablethemod.NPCs.Bosses
 {
     public class Phanto : ModNPC
     {
+		int despawn = 0;
         public override void SetDefaults()
         {
-            	npc.CloneDefaults(NPCID.ShadowFlameApparition);
-		npc.damage = 10;
-		npc.lifeMax = 50;
-            	aiType = NPCID.ShadowFlameApparition;
-        }
+			npc.width = 40;
+			npc.height = 24;
+			npc.aiStyle = 86;
+			npc.damage = 10;
+			npc.defense = 0;
+			npc.lifeMax = 22;
+			npc.HitSound = SoundID.NPCHit52;
+			npc.DeathSound = SoundID.NPCDeath55;
+			npc.knockBackResist = 0f;
+			npc.value = 0f;
+			npc.npcSlots = 0.1f;
+		}
 
-        public override void AI()
+		private void despawnTest(NPC npc) // semi-stolen but kind of changed
+		{
+			if (Main.player[npc.target].dead == true || Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 3500)
+			{
+				npc.TargetClosest(true);
+				if (Main.player[npc.target].dead == true || Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 3500)
+				{
+					if (despawn == 0) despawn++;
+				}
+			}
+			if (despawn > 0)
+			{
+				despawn++;
+				npc.velocity.Y = 10f;
+				npc.noTileCollide = true;
+				if (despawn >= 150) npc.active = false;
+			}
+		}
+
+		public override void AI()
         {
+			despawnTest(npc);
 			for (int num368 = 0; num368 < 200; num368++)
 			{
 				if (num368 == npc.whoAmI || !Main.npc[num368].active || Main.npc[num368].type != npc.type)
@@ -99,4 +127,6 @@ namespace enchtablethemod.NPCs.Bosses
 				}
 			}
 		}
+
+
     }
