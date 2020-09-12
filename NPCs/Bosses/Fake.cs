@@ -43,7 +43,7 @@ namespace enchtablethemod.NPCs.Bosses
             npc.npcSlots = 5;
 
             npc.lifeMax = 1500;
-            npc.damage = 32;
+            npc.damage = 15;
             npc.defense = 7;
             npc.knockBackResist = 0f;
 
