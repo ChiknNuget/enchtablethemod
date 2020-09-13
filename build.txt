@@ -1,3 +1,4 @@
-displayName = Ench Table: the mod
+displayName = 
+ENCHANTMENT TABLE: The Block: The Mod: The Game: The Movie: The Book: The Cave Painting: The Ancient Inscription: The Mod has funny dancing cow! & KNUCKLES (In Shocking 2-D)
 author = the entirety of ench table
 version = 0.1
