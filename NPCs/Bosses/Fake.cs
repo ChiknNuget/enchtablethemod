@@ -90,6 +90,7 @@ namespace enchtablethemod.NPCs.Bosses
                 case 2:
                     PhaseVar = 0;
                     npc.position.X -= 1000;
+                    FunnyDust();
                     break;
             }
             npc.netUpdate = true;
