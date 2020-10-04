@@ -99,7 +99,7 @@ namespace enchtablethemod.NPCs.Bosses
         private void teleportThing()
         {
             if (FunnyCounter % 2 == 0)
-                targetPos = Main.player[npc.target].Center + new Vector2(700, 0);
+                targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(500, 700), Main.rand.Next(-100, 100));
             else
             {
                 FunnyDust();
@@ -107,7 +107,7 @@ namespace enchtablethemod.NPCs.Bosses
                 FunnyDust();
                 Main.PlaySound(SoundID.Item8, npc.Center);
             }
-            targetPos = Main.player[npc.target].Center + new Vector2(700, 0);
+            targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(500, 700), Main.rand.Next(-100, 100));
             if (npc.Center.Y > targetPos.Y)
             {
                 npc.velocity.Y -= .2f;
