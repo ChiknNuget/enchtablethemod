@@ -11,7 +11,8 @@ using static Terraria.ModLoader.ModContent;
 
 namespace enchtablethemod.NPCs.Bosses
 {
-
+    [AutoloadBossHead]
+    
     public class Fake : ModNPC
     {
         public int despawn = 0;
