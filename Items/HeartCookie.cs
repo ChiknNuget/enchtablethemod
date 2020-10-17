@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
-using ChefClass.Buffs;
+using enchtablethemod.Buffs;
 
-namespace ChefClass.Items
+namespace enchtablethemod.Items
 {
     public class HeartCookie : ChefRecipe
     {
