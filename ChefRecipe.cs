@@ -10,7 +10,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using static Terraria.ModLoader.ModContent;
-using ChefClass.Buffs;
+using enchtablethemod.Buffs;
 
 namespace enchtablethemod
 {
