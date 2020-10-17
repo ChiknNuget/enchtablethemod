@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace enchtablethemod.NPCs.Bosses
+namespace enchtablethemod.NPCs.Bosses.FakeBoss
 {
     [AutoloadBossHead]
-    
+
     public class Fake : ModNPC
     {
         public int despawn = 0;
@@ -20,6 +20,7 @@ namespace enchtablethemod.NPCs.Bosses
         int FunnyCounter { get; set; } = 0;
         public Vector2 targetPos;
         public float xAccel = 0;
+        private int movement = -1;
         public float timer
         {
             get => npc.ai[2];
@@ -31,7 +32,7 @@ namespace enchtablethemod.NPCs.Bosses
             Main.npcFrameCount[npc.type] = 1;
         }
 
-        
+
 
         public override void SetDefaults()
         {
@@ -78,11 +79,12 @@ namespace enchtablethemod.NPCs.Bosses
             Player player = Main.player[npc.target];
             npc.TargetClosest(true);
             Vector2 target = npc.HasPlayerTarget ? player.Center : Main.npc[npc.target].Center;
+            movement = Main.rand.Next(0, 1);
             npc.netAlways = true;
-            switch(PhaseVar)
+            switch (PhaseVar)
             {
                 case 0:
-                    teleportThing();
+                    teleportThingButAwsome();
                     timer = 0;
                     break;
                 case 1:
@@ -100,7 +102,7 @@ namespace enchtablethemod.NPCs.Bosses
         private void teleportThing()
         {
             if (FunnyCounter % 2 == 0)
-                targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(500, 700), Main.rand.Next(-100, 100));
+                targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(300,700), Main.rand.Next(-100,100));
             else
             {
                 FunnyDust();
@@ -108,7 +110,7 @@ namespace enchtablethemod.NPCs.Bosses
                 FunnyDust();
                 Main.PlaySound(SoundID.Item8, npc.Center);
             }
-            targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(500, 700), Main.rand.Next(-100, 100));
+            targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(300, 700), Main.rand.Next(-100, 100));
             if (npc.Center.Y > targetPos.Y)
             {
                 npc.velocity.Y -= .2f;
@@ -149,10 +151,62 @@ namespace enchtablethemod.NPCs.Bosses
             }
         }
 
+        private void teleportThingButAwsome()
+        {
+            if (FunnyCounter % 2 == 0)
+                targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(-700, -300), Main.rand.Next(-100, 100));
+            else
+            {
+                FunnyDust();
+                npc.position.X -= -1500;
+                FunnyDust();
+                Main.PlaySound(SoundID.Item8, npc.Center);
+            }
+            targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(-700, -300), Main.rand.Next(-100, 100));
+            if (npc.Center.Y > targetPos.Y)
+            {
+                npc.velocity.Y -= .2f;
+                if (npc.velocity.Y > 0)
+                    npc.velocity.Y *= .9f;
+            }
+            if (npc.Center.Y < targetPos.Y)
+            {
+                npc.velocity.Y += .2f;
+                if (npc.velocity.Y < 0)
+                    npc.velocity.Y *= .9f;
+            }
+            if (Math.Abs(npc.velocity.Y) > 7)
+                npc.velocity.Y *= .98f;
+            if (npc.Center.X < targetPos.X)
+            {
+                xAccel -= -.3f;
+                if (FunnyCounter % 2 == 0)
+                {
+                    FunnyCounter++;
+                }
+            }
+            if (npc.Center.X > targetPos.X)
+            {
+                xAccel += -.3f;
+                if (FunnyCounter % 2 != 0)
+                {
+                    FunnyCounter++;
+                }
+            }
+            if (Math.Abs(xAccel) > 7)
+                xAccel *= .98f;
+            npc.velocity.X = xAccel;
+            if (FunnyCounter > 6)
+            {
+                FunnyCounter = 0;
+                PhaseVar++;
+            }
+        }
+
         private void minionCrap()
         {
             npc.velocity *= 0.9f;
-            if(timer >= 150)
+            if (timer >= 150)
             {
                 NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<Phanto>(), npc.whoAmI);
                 timer = 0;
@@ -161,9 +215,11 @@ namespace enchtablethemod.NPCs.Bosses
             timer += 1f;
         }
 
+        
+
         private void FunnyDust()
         {
-            for(int i = 0; i < 25; i++)
+            for (int i = 0; i < 25; i++)
             {
                 int dust = Dust.NewDust(npc.position, npc.width, npc.height, 259);
                 Main.dust[dust].velocity *= 6f;
@@ -188,7 +244,7 @@ namespace enchtablethemod.NPCs.Bosses
                 if (despawn >= 150) npc.active = false;
             }
         }
-        
+
     }
 }
 
