@@ -5,7 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ChefClass.Buffs
+namespace enchtablethemod.Buffs
 {
     public class Full : ModBuff
     {
