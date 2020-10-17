@@ -1,2 +1,2 @@
-displayName = Undertale
+displayName = Ench Table: The Mod
 version = 0.1
