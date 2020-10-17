@@ -1,2 +1,3 @@
-displayName = Undertale
-version = 22.22
+displayName = Ench Table Mod
+version = 0.1
+modAuthor = Ench Table
