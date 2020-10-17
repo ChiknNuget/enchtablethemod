@@ -101,6 +101,7 @@ namespace enchtablethemod.NPCs.Bosses.FakeBoss
 
         private void teleportThing()
         {
+        //DO NOT DELETE I WILL BE USING THIS FOR LATER -arnold
             if (FunnyCounter % 2 == 0)
                 targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(300,700), Main.rand.Next(-100,100));
             else
@@ -153,6 +154,7 @@ namespace enchtablethemod.NPCs.Bosses.FakeBoss
 
         private void teleportThingButAwsome()
         {
+        //teleport thing but flipped
             if (FunnyCounter % 2 == 0)
                 targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(-700, -300), Main.rand.Next(-100, 100));
             else
