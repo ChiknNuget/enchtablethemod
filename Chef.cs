@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace ChefClass
+namespace enchtablethemod
 {
     public class Chef : ModPlayer
     {
