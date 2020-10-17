@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace ChefClass
+namespace enchtablethemod
 {
     public abstract class ChefDamageItem : ModItem // STOLEN:tm: from daedalus class code but i'm pretty sure it's fine since half of the former PaS devs are in ench table
     {
