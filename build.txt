@@ -1,2 +1,2 @@
-displayName = Undertale
+displayName = Legofactor Dies in Real
 version = 0.1
