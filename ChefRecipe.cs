@@ -12,7 +12,7 @@ using Terraria.ModLoader.IO;
 using static Terraria.ModLoader.ModContent;
 using ChefClass.Buffs;
 
-namespace ChefClass
+namespace enchtablethemod
 {
     public abstract class ChefRecipe : ModItem
     {
