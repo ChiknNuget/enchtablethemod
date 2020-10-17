@@ -1,2 +1,2 @@
-displayName = Steven After Not Surviving Mod
+displayName = Undertale
 version = 0.1
