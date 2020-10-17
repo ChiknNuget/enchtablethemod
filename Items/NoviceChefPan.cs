@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
 
-namespace ChefClass.Items
+namespace enchtablethemod.Items
 {
     public class NoviceChefPan : ChefDamageItem
     {
