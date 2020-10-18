@@ -88,7 +88,6 @@ namespace enchtablethemod.NPCs.Bosses.FakeBoss
                     timer = 0;
                     break;
                 case 1:
-                    tp_reset();
                     minionCrap();
                     break;
                 case 2:
@@ -96,7 +95,6 @@ namespace enchtablethemod.NPCs.Bosses.FakeBoss
                     timer = 0;
                     break;
                 case 3:
-                    tp_reset();
                     minionCrap();
                     break;
                 case 4:
@@ -221,11 +219,6 @@ namespace enchtablethemod.NPCs.Bosses.FakeBoss
                 PhaseVar++;
             }
             timer += 1f;
-        }
-
-        private void tp_reset()
-        {
-            npc.position = Main.player[npc.target].Center + new Vector2(0,-300);
         }
 
         private void FunnyDust()
