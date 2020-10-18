@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace enchtablethemod
 {
-    public abstract class ChefDamageItem : ModItem // STOLEN:tm: from daedalus class code but i'm pretty sure it's fine since half of the former PaS devs are in ench table
+    public abstract class ChefDamageItem : ModItem // STOLEN g :tm: from daedalus class code but i'm pretty sure it's fine since half of the former PaS devs are in ench table
     {
 		public virtual void SafeSetDefaults()
 		{
