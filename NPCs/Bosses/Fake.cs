@@ -9,7 +9,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace enchtablethemod.NPCs.Bosses
+namespace enchtablethemod.NPCs.Bosses.FakeBoss
 {
     [AutoloadBossHead]
 
@@ -84,15 +84,23 @@ namespace enchtablethemod.NPCs.Bosses
             switch (PhaseVar)
             {
                 case 0:
-                    teleportThingButAwsome();
+                    teleportThing();
                     timer = 0;
                     break;
                 case 1:
+                    tp_reset();
                     minionCrap();
                     break;
                 case 2:
+                    teleportThingButAwsome();
+                    timer = 0;
+                    break;
+                case 3:
+                    tp_reset();
+                    minionCrap();
+                    break;
+                case 4:
                     PhaseVar = 0;
-                    npc.position.X -= 1000;
                     FunnyDust();
                     break;
             }
@@ -101,7 +109,6 @@ namespace enchtablethemod.NPCs.Bosses
 
         private void teleportThing()
         {
-        //DO NOT DELETE I WILL BE USING THIS FOR LATER -arnold
             if (FunnyCounter % 2 == 0)
                 targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(300,700), Main.rand.Next(-100,100));
             else
@@ -154,7 +161,6 @@ namespace enchtablethemod.NPCs.Bosses
 
         private void teleportThingButAwsome()
         {
-        //teleport thing but flipped
             if (FunnyCounter % 2 == 0)
                 targetPos = Main.player[npc.target].Center + new Vector2(Main.rand.Next(-700, -300), Main.rand.Next(-100, 100));
             else
@@ -217,7 +223,10 @@ namespace enchtablethemod.NPCs.Bosses
             timer += 1f;
         }
 
-        
+        private void tp_reset()
+        {
+            npc.position = Main.player[npc.target].Center + new Vector2(0,-300);
+        }
 
         private void FunnyDust()
         {
