@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using enchtablethemod.NPCs.Bosses;
 
 namespace enchtablethemod.Items
 {
@@ -39,7 +40,7 @@ namespace enchtablethemod.Items
 
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, NPCType<NPCs.Bosses.Fake>());
+			NPC.SpawnOnPlayer(player.whoAmI, NPCType<Fake>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}
