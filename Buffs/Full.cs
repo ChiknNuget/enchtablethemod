@@ -11,6 +11,7 @@ namespace enchtablethemod.Buffs
     {
 		public override void SetDefaults()
 		{
+		//bababooey
 			DisplayName.SetDefault("Full");
 			Description.SetDefault("You've eaten enough and don't want to cook anything else yet");
 			Main.debuff[Type] = true;
