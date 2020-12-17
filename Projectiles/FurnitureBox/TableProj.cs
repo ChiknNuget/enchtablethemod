@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace enchtablethemod.Projectiles.Weapons.FurnitureBox
+namespace enchtablethemod.Projectiles.FurnitureBox
 {
 	public class TableProj : ModProjectile
 	{
